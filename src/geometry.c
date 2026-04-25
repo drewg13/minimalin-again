@@ -14,7 +14,8 @@ bool intersect(const Segment seg, const GRect frame)
     const GPoint head = seg.head;
     const GPoint tail = seg.tail;
     if ((head.x < x_min && tail.x < x_min) || (head.y < y_min && tail.y < y_min) ||
-        (head.x > x_max && tail.x > x_max) || (head.y > y_max && tail.y > y_max))
+        (head.x > x_max && tail.x > x_max) || (head.y > y_max && tail.y > y_max) ||
+        (tail.x == head.x) || (tail.y == head.y))
     {
         return false;
     }
